@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="UTF-8"> 
+       <title></title>
+       <link rel="stylesheet" href="">
+   </head>
+   <body>
+    <style>
+        body{
+        background: grey;
+          }
+          #caja{
+            margin-top: 50px;
+            padding:50px;
+          }
+    </style>
+    <table>
+      <thead>
+    <tr>
+      <td>No.</td>
+      <td>Usuario</td>
+      <td>Edad de usuario PAR o IMPAR</td>
+    </tr>
+  </thead>
+    <tbody>
+    {% for aqui in modelo %}
+    <tr>
+       <td>{{ aqui.id }}</td>
+       <td>{{ aqui.created_by }}</td>
+       {% if aqui.edad|divisibleby:"2" %}
+           <td>{{ aqui.edad }}  Tiene edad PAR</td>
+       {% else %}
+           <td>{{ aqui.edad }}  Tiene edad IMPAR</td>
+       {% endif %}
+       </tr>
+   {% endfor %}
+   </tbody>
+   </table> 
+   <div>
+    <li><a href="{% url 'logout' %}">Salir</a></li>
+   </div>
+   </body>
+</html>

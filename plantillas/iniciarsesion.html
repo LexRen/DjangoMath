@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="UTF-8"> 
+       <title></title>
+       <link rel="stylesheet" href="">
+   </head>
+   <body>
+    <style>
+        body{
+        background: grey;
+          }
+          #caja{
+            margin-top: 50px;
+            padding:50px;
+          }
+    </style>
+    
+     <form action="" method="post">
+       {% csrf_token %}
+       {{ form.as_p }}
+       <button type="submit">Iniciar Sesion</button>
+     </form>
+
+   
+   </body>
+</html>
