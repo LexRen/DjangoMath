@@ -22,7 +22,7 @@ from django.contrib.auth.views import login, logout_then_login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('registrar/', RegistroUsuario.as_view(), name='inicio'),
+    path('', RegistroUsuario.as_view(), name='inicio'),
     path('accounts/login/', login,{'template_name':'iniciarsesion.html'}, name='login'),
     path('segunda/', yave.as_view(), name='yave'),
     path('lista/', lista.as_view(), name='lista'),
